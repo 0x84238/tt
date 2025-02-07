@@ -21,7 +21,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100%;
             overflow: hidden;
             text-align: center;
             padding: 20px;
@@ -72,6 +72,24 @@
             50% { transform: rotate(0deg); }
             75% { transform: rotate(-5deg); }
             100% { transform: rotate(0deg); }
+        }
+
+        /* Styling for the "Click here to see us!" link */
+        .see-us-link {
+            font-size: 3vw;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.4);
+            animation: rainbowText 3s linear infinite;
+        }
+
+        .see-us-link:hover {
+            background-color: rgba(0, 0, 0, 0.6);
         }
 
         /* Image upload section */
@@ -128,6 +146,11 @@
                 margin-bottom: 15px;
             }
 
+            .see-us-link {
+                font-size: 5vw;
+                padding: 12px;
+            }
+
             .image-upload img {
                 max-width: 90%;
                 max-height: 200px;
@@ -150,8 +173,11 @@
         <h1>I Love You, <span class="name">Trinity 💖</span></h1>
     </div>
 
+    <!-- "Click here to see us!" link -->
+    <a href="#image-section" class="see-us-link">Click here to see us!</a>
+
     <!-- Image upload section -->
-    <div class="image-upload">
+    <div class="image-upload" id="image-section">
         <h2>Image Upload Section</h2>
         <div>
             <img src="https://i.imgur.com/p4wqa9K.jpeg" alt="Image 1">
