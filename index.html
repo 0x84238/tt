@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For My Girlfriend, Trinity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Cyberpunk font -->
     <style>
         /* Basic page reset */
         body, html {
             margin: 0; /* Remove default margin */
             padding: 0; /* Remove default padding */
             height: 100%; /* Make the body take full height */
-            font-family: Arial, sans-serif; /* Set a clean, readable font */
+            font-family: 'Press Start 2P', cursive; /* Cyberpunk font */
         }
 
         /* Set the background color and text color for the page */
@@ -127,13 +128,27 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            animation: rainbow 3s linear infinite; /* Rainbow animation for the image section */
         }
 
         .image-upload img {
             max-width: 100%;
             max-height: 300px;
             margin: 10px;
-            border-radius: 10px;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-upload img:hover {
+            transform: scale(1.1); /* Make images grow slightly on hover */
+        }
+
+        /* Styling for image grid layout */
+        .image-upload div {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            justify-items: center;
         }
     </style>
 </head>
