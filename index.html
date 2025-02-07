@@ -8,34 +8,33 @@
     <style>
         /* Basic page reset */
         body, html {
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            height: 100%; /* Make the body take full height */
-            font-family: 'Press Start 2P', cursive; /* Cyberpunk font */
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Press Start 2P', cursive;
         }
 
-        /* Set the background color and text color for the page */
         body {
-            background-color: #4B0082; /* Dark purple background */
-            color: white; /* White text for contrast */
-            display: flex; /* Use flexbox for centering the content */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Full viewport height */
-            overflow: hidden; /* Prevent scrolling */
-            text-align: center; /* Center the text inside the container */
-            flex-direction: column; /* Stack elements vertically */
+            background-color: #4B0082;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
         }
 
         /* Styling for "Work in Progress" at the top */
         .work-in-progress {
-            font-size: 5vw; /* Adjust font size for responsiveness */
-            font-weight: bold; /* Make the text bold */
-            animation: rainbowText 3s linear infinite; /* Rainbow color animation */
-            margin-bottom: 20px; /* Space between "Work in Progress" and main content */
+            font-size: 5vw;
+            font-weight: bold;
+            animation: rainbowText 3s linear infinite;
+            margin-bottom: 30px;
         }
 
-        /* Sync rainbow animation */
         @keyframes rainbowText {
             0% { color: red; }
             14% { color: orange; }
@@ -47,75 +46,43 @@
             100% { color: red; }
         }
 
-        /* Container for the text, centered on the page */
+        /* Container for the text */
         .container {
-            padding: 20px; /* Ensure some space around the text */
+            margin-bottom: 40px;
         }
 
-        /* Styling the "I Love You" text */
         h1 {
-            font-size: 6vw; /* Responsive font size for wide screens */
-            font-weight: bold; /* Make the text bold */
-            color: rgb(255, 0, 0); /* Initial red color for the text */
-            animation: wiggle 1s ease-in-out infinite, rainbowText 3s linear infinite; /* Add animations */
+            font-size: 6vw;
+            font-weight: bold;
+            color: rgb(255, 0, 0);
+            animation: wiggle 1s ease-in-out infinite, rainbowText 3s linear infinite;
         }
 
-        /* Styling the name "Trinity" to apply similar animations */
         .name {
-            font-size: 6vw; /* Adjusted to be responsive */
-            font-weight: bold; /* Bold for emphasis */
-            color: rgb(255, 0, 0); /* Initial red color for the name */
-            animation: wiggle 1s ease-in-out infinite, rainbowText 3s linear infinite; /* Same animations */
+            font-size: 6vw;
+            font-weight: bold;
+            color: rgb(255, 0, 0);
+            animation: wiggle 1s ease-in-out infinite, rainbowText 3s linear infinite;
         }
 
-        /* Animation for the wiggling effect (rotating the text) */
+        /* Wiggle effect animation */
         @keyframes wiggle {
-            0% {
-                transform: rotate(0deg); /* No rotation at the start */
-            }
-            25% {
-                transform: rotate(5deg); /* Rotate slightly to the right */
-            }
-            50% {
-                transform: rotate(0deg); /* Return to original position */
-            }
-            75% {
-                transform: rotate(-5deg); /* Rotate slightly to the left */
-            }
-            100% {
-                transform: rotate(0deg); /* Return to original position */
-            }
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
         }
 
-        /* For smaller screens (phones, especially iPhone) */
-        @media (max-width: 768px) {
-            h1, .name {
-                font-size: 8vw; /* Larger text for small screens */
-            }
-
-            .work-in-progress {
-                font-size: 8vw; /* Larger text for "Work in Progress" */
-                margin-bottom: 15px; /* Adjust margin for smaller screens */
-            }
-
-            /* Adjust image sizes for small screens */
-            .image-upload img {
-                max-width: 90%; /* Make images a bit smaller for mobile */
-                max-height: 200px; /* Limit image height */
-                margin: 5px;
-            }
-        }
-
-        /* Styling for the image upload section */
+        /* Image upload section */
         .image-upload {
-            margin-top: 20px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            animation: rainbowImages 3s linear infinite; /* Rainbow animation for the image section */
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+            animation: rainbowImages 3s linear infinite;
         }
 
-        /* Sync rainbow animation for images */
         @keyframes rainbowImages {
             0% { border-color: red; }
             14% { border-color: orange; }
@@ -132,20 +99,43 @@
             max-height: 300px;
             margin: 10px;
             border-radius: 15px;
-            border: 5px solid; /* Add border to images */
+            border: 5px solid;
             transition: transform 0.3s ease-in-out;
         }
 
         .image-upload img:hover {
-            transform: scale(1.1); /* Make images grow slightly on hover */
+            transform: scale(1.1);
         }
 
-        /* Styling for image grid layout */
         .image-upload div {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
             justify-items: center;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* For smaller screens (phones, especially iPhone) */
+        @media (max-width: 768px) {
+            h1, .name {
+                font-size: 8vw;
+            }
+
+            .work-in-progress {
+                font-size: 8vw;
+                margin-bottom: 15px;
+            }
+
+            .image-upload img {
+                max-width: 90%;
+                max-height: 200px;
+            }
+
+            .image-upload div {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
         }
     </style>
 </head>
@@ -157,7 +147,6 @@
 
     <!-- Main container to hold the text -->
     <div class="container">
-        <!-- The text "I Love You, Trinity" with a name section for custom styling -->
         <h1>I Love You, <span class="name">Trinity 💖</span></h1>
     </div>
 
