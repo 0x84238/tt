@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Girlfriend, Trinity</title>
+    <style>
+        /* Basic page reset */
+        body, html {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            height: 100%; /* Make the body take full height */
+            font-family: Arial, sans-serif; /* Set a clean, readable font */
+        }
+
+        /* Set the background color and text color for the page */
+        body {
+            background-color: #4B0082; /* Dark purple background */
+            color: white; /* White text for contrast */
+            display: flex; /* Use flexbox for centering the content */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Container for the text, centered on the page */
+        .container {
+            text-align: center; /* Center the text inside the container */
+        }
+
+        /* Styling the "I Love You" text */
+        h1 {
+            font-size: 4em; /* Make the text large */
+            font-weight: bold; /* Make the text bold */
+            color: rgb(255, 0, 0); /* Initial red color for the text */
+            animation: wiggle 1s ease-in-out infinite, colorChange 3s ease-in-out infinite; /* Add animations */
+        }
+
+        /* Styling the name "Trinity" to apply similar animations */
+        .name {
+            font-size: 4em; /* Make the name as large as the "I Love You" text */
+            font-weight: bold; /* Bold for emphasis */
+            color: rgb(255, 0, 0); /* Initial red color for the name */
+            animation: wiggle 1s ease-in-out infinite, colorChange 3s ease-in-out infinite; /* Same animations */
+        }
+
+        /* Animation for the wiggling effect (rotating the text) */
+        @keyframes wiggle {
+            0% {
+                transform: rotate(0deg); /* No rotation at the start */
+            }
+            25% {
+                transform: rotate(5deg); /* Rotate slightly to the right */
+            }
+            50% {
+                transform: rotate(0deg); /* Return to original position */
+            }
+            75% {
+                transform: rotate(-5deg); /* Rotate slightly to the left */
+            }
+            100% {
+                transform: rotate(0deg); /* Return to original position */
+            }
+        }
+
+        /* Animation to change text color (RGB effect) */
+        @keyframes colorChange {
+            0% {
+                color: rgb(255, 0, 0); /* Start with red */
+            }
+            33% {
+                color: rgb(0, 255, 0); /* Change to green */
+            }
+            66% {
+                color: rgb(0, 0, 255); /* Change to blue */
+            }
+            100% {
+                color: rgb(255, 0, 0); /* Back to red */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container to hold the text -->
+    <div class="container">
+        <!-- The text "I Love You, Trinity" with a name section for custom styling -->
+        <h1>I Love You, <span class="name">Trinity 💖</span></h1>
+    </div>
+</body>
+</html>
