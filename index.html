@@ -56,4 +56,140 @@
             font-weight: bold;
             color: rgb(255, 0, 0);
             animation: wiggle 1s ease-in-out infinite, rainbowText 3s linear infinite;
- 
+        }
+
+        .name {
+            font-size: 6vw;
+            font-weight: bold;
+            color: rgb(255, 0, 0);
+            animation: wiggle 1s ease-in-out infinite, rainbowText 3s linear infinite;
+        }
+
+        /* Wiggle effect animation */
+        @keyframes wiggle {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Styling for the "Click here to see us!" link */
+        .see-us-link {
+            font-size: 3vw;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.4);
+            animation: rainbowText 3s linear infinite;
+        }
+
+        .see-us-link:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Image section */
+        .image-upload {
+            display: none; /* Hide by default */
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+            animation: rainbowImages 3s linear infinite;
+        }
+
+        @keyframes rainbowImages {
+            0% { border-color: red; }
+            14% { border-color: orange; }
+            28% { border-color: yellow; }
+            42% { border-color: green; }
+            57% { border-color: blue; }
+            71% { border-color: indigo; }
+            85% { border-color: violet; }
+            100% { border-color: red; }
+        }
+
+        .image-upload img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            margin: 10px;
+            border-radius: 15px;
+            border: 5px solid;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-upload img:hover {
+            transform: scale(1.05);
+        }
+
+        .image-upload div {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* For smaller screens (phones, especially iPhone) */
+        @media (max-width: 768px) {
+            h1, .name {
+                font-size: 8vw;
+            }
+
+            .wip {
+                font-size: 8vw;
+                margin-bottom: 15px;
+            }
+
+            .see-us-link {
+                font-size: 5vw;
+                padding: 12px;
+            }
+
+            .image-upload img {
+                max-width: 90%;
+                max-height: 200px;
+            }
+
+            .image-upload div {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- "WIP" with rainbow colors -->
+    <div class="wip">WIP</div>
+
+    <!-- Main container to hold the text -->
+    <div class="container">
+        <h1>I Love You, <span class="name">Trinity 💖</span></h1>
+    </div>
+
+    <!-- "Click here to see us!" link -->
+    <a href="#image-section" class="see-us-link" onclick="showImages()">Click here to see us!</a>
+
+    <!-- Image section (removed text "Image Upload Section") -->
+    <div class="image-upload" id="image-section">
+        <div>
+            <img src="https://i.imgur.com/p4wqa9K.jpeg" alt="Image 1">
+            <img src="https://i.imgur.com/mZXe22Q.jpeg" alt="Image 2">
+            <img src="https://i.imgur.com/fQlVKEG.jpeg" alt="Image 3">
+            <img src="https://i.imgur.com/aWebrZ0.jpeg" alt="Image 4">
+        </div>
+    </div>
+
+    <script>
+        function showImages() {
+            document.querySelector('.image-upload').style.display = 'flex'; // Show images when the link is clicked
+            window.scrollTo({ top: document.getElementById('image-section').offsetTop, behavior: 'smooth' }); // Smooth scroll to image section
+        }
+    </script>
+</body>
+</html>
