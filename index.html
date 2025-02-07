@@ -115,7 +115,7 @@
         .image-upload img {
             width: 100%;
             height: auto;
-            max-height: 300px;
+            max-height: 230px; /* Adjusted size for smaller screens */
             margin: 10px;
             border-radius: 15px;
             border: 5px solid;
@@ -128,7 +128,7 @@
 
         .image-upload div {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Allow flexibility for columns */
+            grid-template-columns: repeat(2, 1fr); /* Two images per row */
             gap: 20px;
             justify-items: center;
             max-width: 1200px;
@@ -154,11 +154,19 @@
 
             .image-upload img {
                 max-width: 90%;
-                max-height: 250px;
+                max-height: 200px; /* Slightly reduced max-height */
             }
 
             .image-upload div {
-                grid-template-columns: 1fr; /* Stack the images vertically for better fit */
+                grid-template-columns: 1fr; /* Stack images vertically */
+            }
+        }
+
+        /* Additional tweaks for very small screens (like older iPhones) */
+        @media (max-width: 480px) {
+            .image-upload img {
+                max-width: 95%;
+                max-height: 180px; /* Further reduce image size for tiny screens */
             }
         }
     </style>
