@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Trinity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* Basic page reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        body {
+            background-color: #4B0082;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Image section */
+        .image-upload {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* Style for the image container */
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            justify-items: center;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Image styling */
+        .image-container img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            max-height: 300px;
+            margin: 10px;
+            border-radius: 10px;
+            border: 5px solid #fff;
+            transition: transform 0.3s ease-in-out;
+            object-fit: cover; /* Ensure images cover the container without distortion */
+            cursor: pointer;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Styling for the modal (lightbox) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Modal content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Close button (x) */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Image section -->
+    <div class="image-upload">
+        <div class="image-container">
+            <img src="https://i.imgur.com/fQlVKEG.jpeg" alt="Image 1" onclick="openModal(this)">
+            <img src="https://i.imgur.com/aWebrZ0.jpeg" alt="Image 2" onclick="openModal(this)">
+            <img src="https://i.imgur.com/p4wqa9K.jpeg" alt="Image 3" onclick="openModal(this)">
+        </div>
+    </div>
+
+    <!-- Modal for enlarged images -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Open the modal with the clicked image
+        function openModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        // Close the modal
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
