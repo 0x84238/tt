@@ -22,16 +22,17 @@
             align-items: center; /* Center vertically */
             height: 100vh; /* Full viewport height */
             overflow: hidden; /* Prevent scrolling */
+            text-align: center; /* Center the text inside the container */
         }
 
         /* Container for the text, centered on the page */
         .container {
-            text-align: center; /* Center the text inside the container */
+            padding: 20px; /* Ensure some space around the text */
         }
 
         /* Styling the "I Love You" text */
         h1 {
-            font-size: 4em; /* Make the text large */
+            font-size: 6vw; /* Responsive font size for wide screens */
             font-weight: bold; /* Make the text bold */
             color: rgb(255, 0, 0); /* Initial red color for the text */
             animation: wiggle 1s ease-in-out infinite, colorChange 3s ease-in-out infinite; /* Add animations */
@@ -39,7 +40,7 @@
 
         /* Styling the name "Trinity" to apply similar animations */
         .name {
-            font-size: 4em; /* Make the name as large as the "I Love You" text */
+            font-size: 6vw; /* Adjusted to be responsive */
             font-weight: bold; /* Bold for emphasis */
             color: rgb(255, 0, 0); /* Initial red color for the name */
             animation: wiggle 1s ease-in-out infinite, colorChange 3s ease-in-out infinite; /* Same animations */
@@ -77,6 +78,13 @@
             }
             100% {
                 color: rgb(255, 0, 0); /* Back to red */
+            }
+        }
+
+        /* For smaller screens (phones, especially iPhone) */
+        @media (max-width: 768px) {
+            h1, .name {
+                font-size: 8vw; /* Larger text for small screens */
             }
         }
     </style>
